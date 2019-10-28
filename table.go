@@ -6,10 +6,11 @@ package main
 
 import (
 	"bytes"
-	"github.com/emicklei/proto"
-	"github.com/seamia/protodot/plus"
 	"reflect"
 	"strconv"
+
+	"github.com/emicklei/proto"
+	"github.com/seamia/protodot/plus"
 )
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ func newTable(name string, full FullName, unique UniqueName, style string) *tabl
 		Name:   name,
 		Unique: unique,
 		Type:   string(full),
+		Style:  style,
 	}
 	if err := plus.ApplyTemplate("message.prefix", &t, entry); err != nil {
 		alert("failed to render", err)
@@ -101,6 +103,7 @@ type OneOfEntry struct {
 	Type    string
 	Ordinal string
 	Prefix  string
+	Style   string
 }
 
 var kind2template = map[Kind]string{

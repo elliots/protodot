@@ -6,9 +6,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/seamia/tools/support"
 	"strings"
 	"text/template"
+
+	"github.com/seamia/tools/support"
 )
 
 func oneword(t string) string {
@@ -60,4 +61,10 @@ var templFuncs = template.FuncMap{
 	"settings": settings,
 	"color":    color,
 	"oneword":  oneword,
+	"styleName": func(style string) string {
+		if style == "normal" {
+			return ""
+		}
+		return style
+	},
 }

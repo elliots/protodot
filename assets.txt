@@ -33,5 +33,6 @@
 ./templates/subgraph_end.tmpl
 ./templates/subgraph_entry.tmpl
 ./templates/to_enum.tmpl
+./templates/to_event.tmpl
 ./templates/to_message.tmpl
 ./templates/to_missing.tmpl
